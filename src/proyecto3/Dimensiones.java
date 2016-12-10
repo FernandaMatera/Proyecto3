@@ -8,33 +8,17 @@ package proyecto3;
  */
 public class Dimensiones
 {
-    private int x;
-    private int y;
+
     private int ancho;
     private int alto;
 
-    public Dimensiones(int x, int y, int ancho, int alto) {
-        this.x = x;
-        this.y = y;
+    public Dimensiones( int ancho, int alto) {
+  
         this.ancho = ancho;
         this.alto = alto;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
+ 
 
     public int getAncho() {
         return ancho;

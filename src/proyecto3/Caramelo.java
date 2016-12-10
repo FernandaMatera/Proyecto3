@@ -10,32 +10,17 @@ package proyecto3;
  *
  * @author Fernanda Matera
  */
-public class Caramelo {
-    int alto;
-    int ancho;
+public class Caramelo extends PosicionImagen{
+
     private TipoCaramelos caramelo;
 
-    public Caramelo(int alto, int ancho, TipoCaramelos caramelo) {
-        this.alto = alto;
-        this.ancho = ancho;
+    public Caramelo( int x, int y, int alto, int ancho, TipoCaramelos caramelo) 
+    {
+        super (x,y,alto,ancho);
         this.caramelo = caramelo;
     }
 
-    public int getAlto() {
-        return alto;
-    }
-
-    public void setAlto(int alto) {
-        this.alto = alto;
-    }
-
-    public int getAncho() {
-        return ancho;
-    }
-
-    public void setAncho(int ancho) {
-        this.ancho = ancho;
-    }
+ 
 
     public TipoCaramelos getCaramelo() {
         return caramelo;

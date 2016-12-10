@@ -1,6 +1,8 @@
 
 package proyecto3;
 
+import java.util.Scanner;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
