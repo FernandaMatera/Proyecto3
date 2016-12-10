@@ -6,10 +6,8 @@
 
 /**
  *
- * @author Fernanda Matera
+ * @author Luis
  */
-public class Loader {
-    
-    
-    
+public enum TipoCaramelos {
+    AMARILLOS,ROJOS,MORADOS,AZULES,NARANJOS,VERDES
 }
