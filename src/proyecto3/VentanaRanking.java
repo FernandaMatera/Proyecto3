@@ -12,6 +12,7 @@ package proyecto3;
 
 
 import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -115,6 +116,11 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
             VentanaPrincipal stage = new VentanaPrincipal();
             stage.show();
         }
+    }
+
+    @Override
+    public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
  }

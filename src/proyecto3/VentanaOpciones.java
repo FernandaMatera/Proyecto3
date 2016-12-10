@@ -41,7 +41,7 @@ class VentanaOpciones extends Stage implements EventHandler, ChangeListener
         BorderPane panelPrincipal = new BorderPane();
         root.getChildren().add(panelPrincipal);
     
-        this.atras = new Button("ATRAS);
+        this.atras = new Button("ATRAS");
         this.atras.setPrefWidth(100);
         this.atras.setOnAction(this);
         

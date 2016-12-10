@@ -48,7 +48,6 @@ class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
         VBox panelBotones = new VBox();
         panelBotones.getChildren().addAll(this.opciones, this.desarrollo);
         panelPrincipal.setRight(panelBotones);
-        
         panelPrincipal.setCenter(this.jugar);
         BorderPane rankingDerecha = new BorderPane();
         rankingDerecha.setRight(this.ranking);
@@ -64,7 +63,7 @@ class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
     {
         if( event.getSource() == this.jugar )
         {
-            VentanaJuego stage = new VentanaJuego();
+            VentanaUsuario stage = new VentanaUsuario();
             stage.show();
         }
         if( event.getSource() == this.opciones)
