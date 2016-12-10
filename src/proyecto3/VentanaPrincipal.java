@@ -2,23 +2,16 @@ package proyecto3;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -33,27 +26,12 @@ class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
     {
         super.setTitle("CandyPirates");
         StackPane root = new StackPane();
+        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("fondo.png"))));
+        root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();
         root.getChildren().add(panelPrincipal);
-        
-        HBox topPane = new HBox();
-        topPane.setBackground( new Background(new BackgroundFill(new Color(190/255.0, 0, 102/255.0, 1), CornerRadii.EMPTY, Insets.EMPTY)));
-        Image image = new Image(getClass().getResourceAsStream("logo_utalca.png"));
-        Label logo = new Label("", new ImageView(image));
-        topPane.getChildren().add(logo);
-        panelPrincipal.setTop(topPane);
-        
-        BorderPane panelCentral = new BorderPane();
-        
-        panelCentral.setPadding( new Insets(15) );
-        Label label = new Label("Módulo de usuarios");
-        Font antigua = label.getFont();
-        Font nueva = new Font(antigua.getName(), antigua.getSize()+8);
-        label.setFont(nueva);
-        panelCentral.setTop(label);
-        
-        HBox panelBotones = new HBox(10);
+                    
         this.jugar = new Button("JUGAR");
         this.jugar.setPrefWidth(100);
         this.jugar.setOnAction(this);
@@ -66,15 +44,16 @@ class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
         this.desarrollo = new Button("DESARROLLO");
         this.desarrollo.setPrefWidth(100);
         this.desarrollo.setOnAction(this);
-        panelBotones.getChildren().addAll(this.jugar, this.opciones, this.ranking, this.desarrollo);
-        BorderPane panelBotonesDerecha = new BorderPane();
-        panelBotonesDerecha.setRight(panelBotones);
-        panelCentral.setBottom(panelBotonesDerecha);
         
-
+        VBox panelBotones = new VBox();
+        panelBotones.getChildren().addAll(this.opciones, this.desarrollo);
+        panelPrincipal.setRight(panelBotones);
         
-        panelPrincipal.setCenter(panelCentral);
-        
+        panelPrincipal.setCenter(this.jugar);
+        BorderPane rankingDerecha = new BorderPane();
+        rankingDerecha.setRight(this.ranking);
+        panelPrincipal.setTop(rankingDerecha);
+   
         Scene scene = new Scene(root, 800, 600);
         super.setScene(scene);
     
@@ -110,6 +89,4 @@ class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-   
 }
