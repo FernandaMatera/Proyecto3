@@ -2,17 +2,13 @@ package proyecto3;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -26,17 +22,16 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 
-class MiStage extends Stage implements EventHandler, ChangeListener
+class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
 {
-    private Button eliminar;
-    private Button editar;
-    private Button agregar;
-    final TableView<Usuario> table; 
-    ObservableList<Usuario> data;
+    private Button jugar;
+    private Button opciones;
+    private Button ranking;
+    private Button desarrollo;
     
-    public MiStage()
+    public VentanaPrincipal()
     {
-        super.setTitle("Sistema de usuarios");
+        super.setTitle("CandyPirates");
         StackPane root = new StackPane();
         
         BorderPane panelPrincipal = new BorderPane();
@@ -59,95 +54,62 @@ class MiStage extends Stage implements EventHandler, ChangeListener
         panelCentral.setTop(label);
         
         HBox panelBotones = new HBox(10);
-        this.eliminar = new Button("Eliminar");
-        this.eliminar.setPrefWidth(100);
-        this.eliminar.setOnAction(this);
-        this.eliminar.setDisable(true);
-        this.editar = new Button("Editar");
-        this.editar.setPrefWidth(100);
-        this.editar.setDisable(true);
-        this.editar.setOnAction(this);
-        this.agregar = new Button("Agregar");
-        this.agregar.setPrefWidth(100);
-        this.agregar.setOnAction(this);
-        panelBotones.getChildren().addAll(this.eliminar, this.editar, this.agregar);
+        this.jugar = new Button("JUGAR");
+        this.jugar.setPrefWidth(100);
+        this.jugar.setOnAction(this);
+        this.opciones = new Button("OPCIONES");
+        this.opciones.setPrefWidth(100);
+        this.opciones.setOnAction(this);
+        this.ranking = new Button("RANKING");
+        this.ranking.setPrefWidth(100);
+        this.ranking.setOnAction(this);
+        this.desarrollo = new Button("DESARROLLO");
+        this.desarrollo.setPrefWidth(100);
+        this.desarrollo.setOnAction(this);
+        panelBotones.getChildren().addAll(this.jugar, this.opciones, this.ranking, this.desarrollo);
         BorderPane panelBotonesDerecha = new BorderPane();
         panelBotonesDerecha.setRight(panelBotones);
         panelCentral.setBottom(panelBotonesDerecha);
         
-        
-        data = FXCollections.observableArrayList(
-            new Usuario("Jacob", "Smith", "jacob.smith@example.com"),
-            new Usuario("Isabella", "Johnson", "isabella.johnson@example.com"),
-            new Usuario("Ethan", "Williams", "ethan.williams@example.com"),
-            new Usuario("Emma", "Jones", "emma.jones@example.com"),
-            new Usuario("Michael", "Brown", "michael.brown@example.com")
-        );
-        table = new TableView<>();
-        table.setItems(data);
-        TableColumn firstNameCol = new TableColumn("Nombre de Usuario");
-        firstNameCol.setMinWidth(100);
-        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
-        TableColumn lastNameCol = new TableColumn("Last Name");
-        lastNameCol.setMinWidth(100);
-        lastNameCol.setCellValueFactory(new PropertyValueFactory<>("Nombre Real"));
-        TableColumn emailCol = new TableColumn("Email");
-        emailCol.setMinWidth(200);
-        emailCol.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
-        
-        BorderPane panelTabla = new BorderPane();
-        panelTabla.setCenter(table);
-        panelTabla.setPadding(new Insets(0, 0, 10, 0));
-        panelCentral.setCenter(panelTabla);
+
         
         panelPrincipal.setCenter(panelCentral);
         
         Scene scene = new Scene(root, 800, 600);
         super.setScene(scene);
-        
-        
-        this.agregar.setOnAction(this);
-        
-        table.getSelectionModel().selectedItemProperty().addListener(this);
-        
-               
-        
+    
     }
 
     @Override
     public void handle(Event event)
     {
-        if( event.getSource() == this.agregar )
+        if( event.getSource() == this.jugar )
         {
-            NewStage stage = new NewStage();
+            VentanaJuego stage = new VentanaJuego();
             stage.show();
         }
-        if( event.getSource() == this.editar )
+        if( event.getSource() == this.opciones)
         {
-            NewStage2 stage = new NewStage2();
+            VentanaOpciones stage = new VentanaOpciones();
             stage.show();
         }
-        if( event.getSource() == this.eliminar )
+        if( event.getSource() == this.ranking )
         {
-            Object ob = table.getSelectionModel().getSelectedItem();
-            this.data.remove(ob);
+            VentanaRanking stage = new VentanaRanking();
+            stage.show();
          
+        }
+         if( event.getSource() == this.desarrollo )
+        {
+            VentanaDesarrolladores stage = new VentanaDesarrolladores();
+            stage.show();
         }
     }
 
     @Override
-    public void changed(ObservableValue observable, Object oldValue, Object newValue) 
-    {
-        if( newValue != null )
-        {
-            this.eliminar.setDisable(false);
-            this.editar.setDisable(false);        }
-        else
-        {
-            this.eliminar.setDisable(true);
-            this.editar.setDisable(true);
-        }
+    public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+   
 }

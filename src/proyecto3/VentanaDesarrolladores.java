@@ -10,5 +10,9 @@ package proyecto3;
  * @author Fernanda Matera
  */
 public class VentanaDesarrolladores {
+
+    void show() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
