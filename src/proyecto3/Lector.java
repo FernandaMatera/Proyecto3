@@ -21,11 +21,6 @@ public class Lector {
     {
         this.scanner = new Scanner(System.in);
     }
-    /**
-     * 
-     * @param nick Es del tipo String, corresponde al texto para interactuar con el usuario
-     * @return Se devuelve un String que fue ingresado por el usuario
-     */
     public String leerNombre(String nick)
     {
         System.out.print(nick + ": ");

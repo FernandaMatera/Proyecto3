@@ -5,14 +5,34 @@
  */
 package proyecto3;
 
-/**
- *
- * @author Fernanda Matera
- */
-public class VentanaJuego {
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
-    void show() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+class VentanaJuego extends Stage
+{
     
+    public VentanaJuego()
+    {
+        BorderPane mainPane = new BorderPane();
+
+        VentanaJuego paint = new VentanaJuego();
+        mainPane.setCenter(paint);
+
+        //Para que el Canvas tome el tamano del panel contenedor
+        paint.widthProperty().bind(mainPane.widthProperty());
+        paint.heightProperty().bind(mainPane.heightProperty());
+
+        Scene scene = new Scene(mainPane, 800, 600);
+        super.setScene(scene);
+        super.setTitle("CandyPirates");
+        //super.setResizable(false);
+        //super.setFullScreen(true);
+
+
+    }
+   
 }
+
+

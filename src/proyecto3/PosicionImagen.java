@@ -10,8 +10,6 @@ package proyecto3;
  * @author Luis
  */
 public abstract class PosicionImagen {
-    
-   
     int x;
     int y;
     int ancho;
