@@ -73,6 +73,10 @@ public class Sistema
     {
         return caramelos.iterator();
     }
+
+    void mover() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
      
     
 }
