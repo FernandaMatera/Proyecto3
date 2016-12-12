@@ -5,15 +5,15 @@
  */
 package proyecto3.painter;
 
+import proyecto3.Sistema;
 import java.util.Iterator;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import proyecto3.Sistema;
+
 import proyecto3.Caramelo;
 import proyecto3.Dimension;
 
 
-import proyecto3.Sistema;
+
 
 public class Pintor 
 {
