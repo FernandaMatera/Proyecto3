@@ -101,7 +101,6 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
         super.setScene(scene);
         
         
- 
     }
 
     @Override
