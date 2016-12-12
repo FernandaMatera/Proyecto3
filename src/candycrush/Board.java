@@ -15,8 +15,8 @@ import CandyCrush.Shape.Balls;
 public class Board extends JPanel implements ActionListener
 
 {
-    final int BoardWidth = 10;
-    final int BoardHeight = 22;
+    final int BoardWidth = 9;
+    final int BoardHeight = 9;
     Timer timer;
     boolean isFallingFinished = false;
     boolean isStarted = false;
