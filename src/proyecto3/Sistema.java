@@ -30,19 +30,20 @@ public class Sistema
         {
             for (int j = 0; j < cantidadCaramelosHorizontales; j++)
             {
-                
+                //porque es azul tipo azul esta aqui
                 TipoCaramelos tipo = TipoCaramelo.AZUL;
                 switch(i)
                 {
-                    case 0: case 6: tipo = Tipo.VERDE; break;
-                    case 1: case 7: tipo = Tipo.AMARILLO; break;
-                    case 2: tipo = Tipo.AZUL; break;
-                    case 3: tipo = Tipo.GRIS; break;
-                    case 4: tipo = Tipo.PURPURA; break;
-                    case 5: tipo = Tipo.ROJO; break;
+                    //Porque el case 6 y 7 estan aqui?
+                    case 0: case 6: tipo = TipoCaramelo.VERDE; break;
+                    case 1: case 7: tipo = TipoCaramelo.AMARILLO; break;
+                    case 2: tipo = TipoCaramelo.AZUL; break;
+                    case 3: tipo = TipoCaramelo.GRIS; break;
+                    case 4: tipo = TipoCaramelo.PURPURA; break;
+                    case 5: tipo = TipoCaramelo.ROJO; break;
                 }
-                
-                Caramelo caramelo = new Caramelos(x + j*ANCHO_BLOQUE, y + i*ALTO_BLOQUE, ANCHO_BLOQUE, ALTO_BLOQUE, tipo);
+                //Alto y ancho bloque estan corresponden a caramelo
+                Caramelo caramelo = new Caramelo(x + j*ANCHO_BLOQUE, y + i*ALTO_BLOQUE, ANCHO_BLOQUE, ALTO_BLOQUE, tipo);
                 this.caramelos.add(caramelo);
             }
         }
