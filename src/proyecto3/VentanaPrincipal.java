@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import proyecto3.painter.CargadorImagenes;
 
 
 class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
@@ -26,7 +27,7 @@ class VentanaPrincipal extends Stage implements EventHandler, ChangeListener
     {
         super.setTitle("CandyPirates");
         StackPane root = new StackPane();
-        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("fondo.png"))));
+        Label fondo = new Label ("", new ImageView(CargadorImagenes.getImage("fondo.png")));
         root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();

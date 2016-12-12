@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import proyecto3.painter.CargadorImagenes;
 
 
 class VentanaUsuario extends Stage implements EventHandler, ChangeListener
@@ -30,7 +31,7 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
         super.setTitle("Usuario");
         StackPane root = new StackPane();
         
-        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("usuario.png"))));
+        Label fondo = new Label ("", new ImageView(CargadorImagenes.getImage("fondo.png")));
         root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();
@@ -56,8 +57,7 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
     {
         if( event.getSource() == this.atras )
         {
-            VentanaPrincipal stage = new VentanaPrincipal();
-            stage.show();
+            this.close();
         }
         if( event.getSource() == this.jugar )
         {

@@ -18,6 +18,7 @@ public class Main extends Application
     {
         VentanaPrincipal stage = new VentanaPrincipal();
         stage.show();
+        
     }
 
 }

@@ -24,7 +24,7 @@ public class CargadorImagenes
             return image;
         }
         
-        image = new Image(Pintor.class.getResourceAsStream("/proyecto3/images/" + filename));
+        image = new Image(Pintor.class.getResourceAsStream("/proyecto3/Imagenes/" + filename));
         CargadorImagenes.IMAGENES.put(filename, image);
         return image;
     }

@@ -31,6 +31,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import proyecto3.painter.CargadorImagenes;
 
 class VentanaRanking extends Stage implements EventHandler, ChangeListener
 {
@@ -43,7 +44,7 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
         super.setTitle("Ranking");
        
         StackPane root = new StackPane();
-        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("ranking.png"))));
+        Label fondo = new Label ("", new ImageView(CargadorImagenes.getImage("ranking.png")));
         root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();
@@ -108,8 +109,7 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
     {
         if( event.getSource() == this.atras )
         {
-            VentanaPrincipal stage = new VentanaPrincipal();
-            stage.show();
+            this.close();
         }
     }
 

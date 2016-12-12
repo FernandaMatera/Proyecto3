@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import proyecto3.painter.CargadorImagenes;
 
 
 class VentanaOpciones extends Stage implements EventHandler, ChangeListener
@@ -28,7 +29,7 @@ class VentanaOpciones extends Stage implements EventHandler, ChangeListener
         super.setTitle("Opciones");
         StackPane root = new StackPane();
         
-        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("opciones.png"))));
+        Label fondo = new Label ("", new ImageView(CargadorImagenes.getImage("opciones.png")));
         root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();
@@ -51,8 +52,7 @@ class VentanaOpciones extends Stage implements EventHandler, ChangeListener
     {
         if( event.getSource() == this.atras )
         {
-            VentanaPrincipal stage = new VentanaPrincipal();
-            stage.show();
+            this.close();
         }
     }
 
