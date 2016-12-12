@@ -13,15 +13,11 @@ package proyecto3;
 public class Caramelo extends PosicionImagen{
 
     private TipoCaramelos caramelo;
-   
+       
     public Caramelo( int x, int y, int alto, int ancho, TipoCaramelos caramelo) 
     {
         super (x,y,alto,ancho);
         this.caramelo = caramelo;
-    }
-
-    Caramelo(int i, int i0, int ANCHO_BLOQUE, int ALTO_BLOQUE, proyecto3.TipoCaramelos tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public TipoCaramelos getCaramelo() {
@@ -31,15 +27,4 @@ public class Caramelo extends PosicionImagen{
     public void setCaramelo(TipoCaramelos caramelo) {
         this.caramelo = caramelo;
     }
-
-    static class TipoCaramelos {
-
-        public TipoCaramelos() {
-        }
-    }
-    
-    public String getFilename()
-    {
-        return Caramelo.filename;
-    }
-}
+   }

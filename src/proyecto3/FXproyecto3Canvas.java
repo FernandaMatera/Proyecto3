@@ -44,13 +44,9 @@ public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeLis
         Timeline timer = new Timeline( new KeyFrame(Duration.millis(5), this));
         timer.setCycleCount(Animation.INDEFINITE);
         timer.play();
-        
-        
-        
-        
+             
     }
-    
- 
+     
 //Pintador tiene que ser llamado de otra forma, porque esta en otra carpeta, no me acuero de donde esta
     
     @Override

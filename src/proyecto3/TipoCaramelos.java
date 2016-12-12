@@ -11,7 +11,12 @@ package proyecto3;
  * @author Luis
  */
 public enum TipoCaramelos {
-    AMARILLOS("Candy_5.png"),ROJOS("Candy_3.png"),MORADOS("Candy_2.png"),AZULES("Candy_1.png"),NARANJOS("Candy_6.png"),VERDES("Candy_4.png");
+    AMARILLOS("Candy_5.png"),
+    ROJOS("Candy_3.png"),
+    MORADOS("Candy_2.png"),
+    AZULES("Candy_1.png"),
+    NARANJOS("Candy_6.png"),
+    VERDES("Candy_4.png");
 
     private final String filename;
     
