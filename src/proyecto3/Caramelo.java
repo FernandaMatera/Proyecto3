@@ -13,7 +13,7 @@ package proyecto3;
 public class Caramelo extends PosicionImagen{
 
     private TipoCaramelos caramelo;
-   
+       
     public Caramelo( int x, int y, int alto, int ancho, TipoCaramelos caramelo) 
     {
         super (x,y,alto,ancho);
@@ -28,7 +28,5 @@ public class Caramelo extends PosicionImagen{
         this.caramelo = caramelo;
     }
     
-    
-    
-    public void nuevoCaramelo 
-}
+
+   }

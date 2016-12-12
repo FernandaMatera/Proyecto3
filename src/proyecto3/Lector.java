@@ -3,7 +3,6 @@ package proyecto3;
 
 import java.util.Scanner;
 
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,9 +25,6 @@ public class Lector {
         System.out.print(nick + ": ");
         return this.scanner.nextLine();
     }
-
-
- 
 
 }
 
