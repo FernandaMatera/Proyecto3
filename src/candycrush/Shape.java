@@ -95,7 +95,7 @@ public class Shape
     {
 
         Random rand = new Random();
-        int x = Math.abs(rand.nextInt()) % 7 + 1;
+        int x = Math.abs(rand.nextInt()) % 5 + 1;
         Balls[] values = Balls.values();
         setShape(values[x]);
 

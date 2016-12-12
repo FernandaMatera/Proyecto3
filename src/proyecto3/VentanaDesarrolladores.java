@@ -27,7 +27,7 @@ class VentanaDesarrolladores extends Stage implements EventHandler, ChangeListen
         super.setTitle("Desarrolladores");
         StackPane root = new StackPane();
         
-        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("pick.png"))));
+        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("pick.PNG"))));
         root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();

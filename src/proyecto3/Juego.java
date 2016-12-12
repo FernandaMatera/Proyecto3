@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import proyecto3.Caramelo.TipoCaramelos;
 
 /**
  *
@@ -31,7 +30,8 @@ public class Juego extends JPanel implements ActionListener
     int curY = 0;
     JLabel statusbar;
     Caramelo curPiece;
-    Caramelo.TipoCaramelos[] tablero;
+    private TipoCaramelo tipo;
+    
  
     public Juego(CandyCrush parent)
     {
@@ -40,7 +40,7 @@ public class Juego extends JPanel implements ActionListener
         timer = new Timer(90, this);
         timer.start();
         statusbar =  parent.getStatusBar();
-        tablero = new Caramelo.Balls[TableroWidth * TableroHeight];
+        tablero = new TipoCaramelo[TableroWidth * TableroHeight];
         limpiarTablero(); 
     }
 
@@ -56,7 +56,7 @@ public class Juego extends JPanel implements ActionListener
 
     int squareWidth() { return (int) getSize().getWidth() / TableroWidth; }
     int squareHeight() { return (int) getSize().getHeight() / TableroHeight; }
-    Caramelo.Balls shapeAt(int x, int y) { return tablero[(y * TableroWidth) + x]; }
+    TipoCaramelo shapeAt(int x, int y) { return tablero[(y * TableroWidth) + x]; }
 
     public void start()
     {
@@ -79,15 +79,15 @@ public class Juego extends JPanel implements ActionListener
         {
             for (int j = 0; j < TableroWidth; ++j) 
             {
-               Shape.Balls shape = shapeAt(j, TableroHeight - i - 1);
+               TipoCaramelo shape = shapeAt(j, TableroHeight - i - 1);
                
-               if (shape != Shape.Balls.nStripes)
+               if (shape != TipoCaramelo.nStripes)
                 drawSquare(g, 0 + j * squareWidth(),
                 boardTop + i * squareHeight(), shape);
             }
         }
         
-        if (curPiece.getShape() != Shape.Balls.nStripes) 
+        if (curPiece.getShape() != TipoCaramelo.nStripes) 
         {
             for (int i = 0; i < 4; ++i)
             {
@@ -121,7 +121,7 @@ public class Juego extends JPanel implements ActionListener
     private void limpiarTablero()
     {
         for (int i = 0; i < TableroHeight * TableroWidth; ++i)
-            tablero[i] = Caramelo.Balls.nStripes;
+            tablero[i] = TipoCaramelo.nStripes;
     }
 
     private void pieceDropped()
@@ -130,7 +130,7 @@ public class Juego extends JPanel implements ActionListener
        {
             int x = curX + curPiece.x(i);
             int y = curY - curPiece.y(i);
-            board[(y * TableroWidth) + x] = curPiece.getCaramelo();
+            tablero[(y * TableroWidth) + x] = curPiece.getCaramelo();
         }
         eliminarLinea();
         if (!isFallingFinished)
@@ -139,13 +139,13 @@ public class Juego extends JPanel implements ActionListener
 
     private void nuevaPieza()
     {
-        curPiece.setRandomShape();
+        curPiece.setRandomCaramelo();
         curX = TableroWidth / 2 + 1;
         curY = TableroHeight - 1 + curPiece.minY();
 
         if (!verificarMovimiento(curPiece, curX, curY)) 
         {
-            curPiece.setShape(Caramelo.Balls.nStripes);
+            curPiece.setShape(TipoCaramelo.nStripes);
             timer.stop();
             isStarted = false;
             statusbar.setText("game over");
@@ -160,7 +160,7 @@ public class Juego extends JPanel implements ActionListener
             int y = newY - nuevaPieza.y(i);
             if (x < 0 || x >= TableroWidth || y < 0 || y >= TableroHeight)
                 return false;
-            if (shapeAt(x, y) != Caramelo.Balls.nStripes)
+            if (shapeAt(x, y) != TipoCaramelo.nStripes)
                 return false;
         }
         
@@ -179,7 +179,7 @@ public class Juego extends JPanel implements ActionListener
             boolean lineIsFull = true;
             for (int j = 0; j < TableroWidth; ++j)
             {
-                if (shapeAt(j, i) == Caramelo.Balls.nStripes)
+                if (shapeAt(j, i) == TipoCaramelo.nStripes)
                 {
                     lineIsFull = false;
                     break;
@@ -201,7 +201,7 @@ public class Juego extends JPanel implements ActionListener
             numLinesRemoved += numFullLines;
             statusbar.setText(String.valueOf(numLinesRemoved));
             isFallingFinished = true;
-            curPiece.setShape(Shape.Balls.nStripes);
+            curPiece.setShape(TipoCaramelo.nStripes);
             repaint();
         }
     }

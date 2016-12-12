@@ -17,7 +17,7 @@ class VentanaJuego extends Stage
     {
         BorderPane mainPane = new BorderPane();
 
-        VentanaJuego paint = new VentanaJuego();
+        FXproyecto3Canvas paint = new FXproyecto3Canvas();
         mainPane.setCenter(paint);
 
         //Para que el Canvas tome el tamano del panel contenedor
@@ -32,7 +32,5 @@ class VentanaJuego extends Stage
 
 
     }
-   
 }
-
 

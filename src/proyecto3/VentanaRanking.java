@@ -43,7 +43,7 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
         super.setTitle("Ranking");
        
         StackPane root = new StackPane();
-        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("fondo.png"))));
+        Label fondo = new Label ("", new ImageView(new Image(getClass().getResourceAsStream("ranking.png"))));
         root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();

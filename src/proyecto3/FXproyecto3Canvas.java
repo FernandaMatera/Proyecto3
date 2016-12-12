@@ -14,6 +14,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import proyecto3.painter.CargadorImagenes;
+import proyecto3.painter.Pintor;
 
 
 /**
@@ -62,13 +63,13 @@ public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeLis
     {
         this.context.clearRect(0, 0, (int)this.getWidth(), (int)this.getHeight());
     
-        this.context.drawImage(CargadorImagenes.getImage("wallpaper.jpg"), 0, 0, this.getWidth(), this.getHeight());
+        this.context.drawImage(CargadorImagenes.getImage("wallpaper.png"), 0, 0, this.getWidth(), this.getHeight());
         
         
         
         if(this.sistema != null)
         {
-            Pintador.pintar(this.sistema, this.context, sistema.getMundo(), new Dimension((int)this.getWidth(), (int)this.getHeight()));
+            Pintor.pintar(this.sistema, this.context, sistema.getMundo(), new Dimension((int)this.getWidth(), (int)this.getHeight()));
         }
     }
     

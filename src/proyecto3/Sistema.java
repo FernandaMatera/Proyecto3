@@ -1,12 +1,8 @@
 package proyecto3;
 
 
-import proyecto3.Dimension;
 import java.util.ArrayList;
 import java.util.Iterator;
-import proyecto3.Caramelo;
-import proyecto3.TipoCaramelos;
-
 
 public class Sistema
 {
@@ -21,6 +17,7 @@ public class Sistema
     
     public Sistema(int width, int height)
     {
+        /*creo que mundo no es necesario*/
         this.mundo = new Dimension(width, height);
                
         int cantidadCaramelosHorizontales = 9;
@@ -37,9 +34,8 @@ public class Sistema
                 TipoCaramelos tipo = TipoCaramelos.AZULES;
                 switch(i)
                 {
-                    //Porque el case 6 y 7 estan aqui?
-                    case 0: case 6: tipo = TipoCaramelos.VERDES; break;
-                    case 1: case 7: tipo = TipoCaramelos.AMARILLOS; break;
+                    case 0: tipo = TipoCaramelos.VERDES; break;
+                    case 1: tipo = TipoCaramelos.AMARILLOS; break;
                     case 2: tipo = TipoCaramelos.AZULES; break;
                     case 3: tipo = TipoCaramelos.NARANJOS; break;
                     case 4: tipo = TipoCaramelos.MORADOS; break;
