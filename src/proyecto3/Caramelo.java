@@ -27,4 +27,6 @@ public class Caramelo extends PosicionImagen{
     public void setCaramelo(TipoCaramelos caramelo) {
         this.caramelo = caramelo;
     }
+    
+
    }
