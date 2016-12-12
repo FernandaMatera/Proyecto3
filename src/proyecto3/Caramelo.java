@@ -20,10 +20,6 @@ public class Caramelo extends PosicionImagen{
         this.caramelo = caramelo;
     }
 
-    Caramelo(int i, int i0, int ANCHO_BLOQUE, int ALTO_BLOQUE, proyecto3.TipoCaramelos tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public TipoCaramelos getCaramelo() {
         return caramelo;
     }
@@ -31,15 +27,8 @@ public class Caramelo extends PosicionImagen{
     public void setCaramelo(TipoCaramelos caramelo) {
         this.caramelo = caramelo;
     }
-
-    static class TipoCaramelos {
-
-        public TipoCaramelos() {
-        }
-    }
     
-    public String getFilename()
-    {
-        return Caramelo.filename;
-    }
+    
+    
+    public void nuevoCaramelo 
 }

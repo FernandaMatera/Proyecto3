@@ -39,7 +39,7 @@ public class Pintor
         int y = Pintor.convertirYACoordenadasVentana(caramelo.getY(), mundo, ventana);
         int ancho = Pintor.convertirXACoordenadasVentana(caramelo.getAncho(), mundo, ventana);
         int alto = Pintor.convertirYACoordenadasVentana(caramelo.getAlto(), mundo, ventana);
-        context.drawImage(CargadorImagenes.getImage( caramelo.getCaramelo().getFilename.getTipoCaramelo()), x, y, ancho, alto);
+        context.drawImage(CargadorImagenes.getImage(caramelo.getCaramelo().getFilename()), x, y, ancho, alto);
     }
     
     
