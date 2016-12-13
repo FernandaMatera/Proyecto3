@@ -65,7 +65,9 @@ public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeLis
         
         if(this.sistema != null)
         {
-            Pintor.pintar(this.sistema, this.context, sistema.getMundo(), new Dimension((int)this.getWidth(), (int)this.getHeight()));
+            Pintor.pintar(this.sistema, this.context, sistema.getMundo(), 
+            new Dimension((int)this.getWidth(),
+            (int)this.getHeight()));
         }
     }
     
