@@ -16,11 +16,6 @@ import javafx.util.Duration;
 import proyecto3.painter.CargadorImagenes;
 import proyecto3.painter.Pintor;
 
-
-/**
- *
- * @author Pablo Rojas
- */
 public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeListener
 {
     private Sistema sistema;

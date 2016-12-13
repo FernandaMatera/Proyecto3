@@ -1,6 +1,7 @@
 
 package proyecto3;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -16,8 +17,10 @@ import java.util.Scanner;
 public class Lector {
      private final Scanner scanner;
     
+     
     public Lector()
     {
+        
         this.scanner = new Scanner(System.in);
     }
     public String leerNombre(String nick)
