@@ -63,6 +63,7 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
         {
             VentanaJuego stage = new VentanaJuego();
             stage.show();
+            this.close();
         }
     }
 

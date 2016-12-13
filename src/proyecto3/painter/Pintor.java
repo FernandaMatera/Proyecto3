@@ -22,6 +22,7 @@ public class Pintor
             Caramelo caramelo = caramelos.next();
             Pintor.dibujar(caramelo, context, mundo, ventana);
         }
+       
         
     }
     
@@ -34,6 +35,15 @@ public class Pintor
         context.drawImage(CargadorImagenes.getImage(caramelo.getCaramelo().getFilename()), x, y, ancho, alto);
     }
     
+    static private int convertirXACoordenadasMundo(int XCaramelo, Dimension mundo, Dimension ventana)
+    {
+        return XCaramelo*mundo.getWidth()/ventana.getWidth();
+    }
+    
+    static private int convertirYACoordenadasMundo(int YCaramelo, Dimension mundo, Dimension ventana)
+    {
+        return YCaramelo*mundo.getHeight()/ventana.getHeight();
+    }
     
     static private int convertirXACoordenadasVentana(int x, Dimension mundo, Dimension ventana)
     {

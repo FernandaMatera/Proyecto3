@@ -29,7 +29,7 @@ class VentanaDesarrolladores extends Stage implements EventHandler, ChangeListen
         StackPane root = new StackPane();
         
         Label fondo = new Label ("", new ImageView(CargadorImagenes.getImage("pick.PNG")));
-        root.getChildren().add(fondo);
+            root.getChildren().add(fondo);
         
         BorderPane panelPrincipal = new BorderPane();
         root.getChildren().add(panelPrincipal);
