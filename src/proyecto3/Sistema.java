@@ -7,7 +7,6 @@ package proyecto3;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
 /**
  *
  * @author Luis
@@ -39,19 +38,18 @@ public class Sistema {
     
      public String listarDescendente ()
     {
-        String listado = "";
-        ArrayList<Usuario> usuarios = new ArrayList<>();
+       String listado = "";
+        ArrayList<Usuario> user = new ArrayList<>();
         for (Usuario existente : this.usuarios)
         {
-            usuarios.add(existente);              
+            user.add(existente);              
         }
-        for (Usuario existente : this.usuarios)
-        {
-            usuarios.add(existente);
-        }
-        Collections.sort(usuarios);
-        for (int i = usuarios.size()-1; i > 0; i--){
-            listado+= usuarios.get(i).toString() + "\n";
+        
+        Collections.sort(user, Collections.reverseOrder());
+        
+        
+        for (int i = user.size()-1; i > 0; i--){
+            listado+= user.get(i).toString() + "\n";
         }
         return listado;
         

@@ -36,6 +36,7 @@ import proyecto3.painter.CargadorImagenes;
 class VentanaRanking extends Stage implements EventHandler, ChangeListener
 {
     private Button atras;
+    private Sistema sistema;
     final TableView<Usuario> table; 
     ObservableList<Usuario> data;
     
@@ -69,9 +70,7 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
         panelCentral.setBottom(panelBotonesDerecha);
         
         
-        data = FXCollections.observableArrayList(
-          
-        );
+        ObservableList<Usuario> data = FXCollections.observableArrayList();
         table = new TableView<>();
         table.setItems(data);
         TableColumn firstNameCol = new TableColumn("Nombre");

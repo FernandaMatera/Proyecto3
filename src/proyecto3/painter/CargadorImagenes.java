@@ -28,4 +28,13 @@ public class CargadorImagenes
         CargadorImagenes.IMAGENES.put(filename, image);
         return image;
     }
+    public void paint (String filename, Borde borde)
+    {
+      Borde r = g.getClipBounds();
+      g.setColor(this.getBackground());
+      g.fillRect (r.x, r.y, r.width, r.height);
+      g.drawImage (filename.getImage(), 0, 0, this.getWidth(),
+      this.getHeight(), this.getBackground(), this);
+      super.paint(g);
+     }
 }
