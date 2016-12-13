@@ -5,7 +5,7 @@
  */
 package proyecto3.painter;
 
-import proyecto3.Sistema;
+import proyecto3.CandyPirates;
 import java.util.Iterator;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -14,7 +14,7 @@ import proyecto3.Dimension;
 
 public class Pintor 
 {
-    static public void pintar( Sistema juego, GraphicsContext context, Dimension mundo, Dimension ventana )
+    static public void pintar( CandyPirates juego, GraphicsContext context, Dimension mundo, Dimension ventana )
     {
         Iterator<Caramelo> caramelos = juego.iterator();
         while( caramelos.hasNext() )

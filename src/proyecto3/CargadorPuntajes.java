@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Usuario
+ * @author Luis
  */
 public class CargadorPuntajes {
 
@@ -30,7 +30,7 @@ public class CargadorPuntajes {
             try (Scanner scanner = new Scanner(new File("\\temp\\save.proyecto"))) {
                 cantidad = Integer.parseInt(scanner.nextLine());
                 for (int i = 0; i < cantidad; i++){
-                    String nick = scanner.nextLine();
+                    String nickname = scanner.nextLine();
                     int puntaje = Integer.parseInt(scanner.nextLine());
                 }
             }

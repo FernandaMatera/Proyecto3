@@ -23,12 +23,12 @@ import proyecto3.painter.Pintor;
  */
 public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeListener
 {
-    private Sistema sistema;
+    private CandyPirates sistema;
     private final GraphicsContext context;
     
     public FXproyecto3Canvas()
     {
-        this.sistema = new Sistema(1366, 768);
+        this.sistema = new CandyPirates(1366, 768);
         this.context = super.getGraphicsContext2D();
         
         //agrego eventos del mouse
