@@ -5,19 +5,30 @@
  */
 package proyecto3;
 
+import javafx.event.Event;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
+
 class VentanaJuego extends Stage
 {
+    private Button atras;
     
     public VentanaJuego()
     {
+               
+        this.atras = new Button("ATRAS");
+        this.atras.setPrefWidth(100);
+        this.atras.setOnAction(this);
+        
+        panelPrincipal.setLeft(atras);
+        
         BorderPane mainPane = new BorderPane();
 
-        FXproyecto3Canvas paint = new FXproyecto3Canvas();
+        VentanaJuego paint = new VentanaJuego();
         mainPane.setCenter(paint);
 
         //Para que el Canvas tome el tamano del panel contenedor
@@ -26,11 +37,15 @@ class VentanaJuego extends Stage
 
         Scene scene = new Scene(mainPane, 800, 600);
         super.setScene(scene);
-        super.setTitle("CandyPirates");
+        super.setTitle("Candy Pirates");
         //super.setResizable(false);
         //super.setFullScreen(true);
-
-
+    }
+      public void handle(Event event)
+    {
+        if( event.getSource() == this.atras )
+        {
+            this.close();
+        }
     }
 }
-

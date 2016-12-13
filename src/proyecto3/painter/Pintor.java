@@ -5,43 +5,41 @@
  */
 package proyecto3.painter;
 
-import proyecto3.Sistema;
+import proyecto3.CandyPirates;
 import java.util.Iterator;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
 import proyecto3.Caramelo;
 import proyecto3.Dimension;
 
+
 public class Pintor 
 {
-    static public void pintar( Sistema juego, GraphicsContext context, Dimension mundo, Dimension ventana )
+    
+    static public void pintar( CandyPirates juego, GraphicsContext context, Dimension mundo, Dimension ventana )
     {
-        int x = Pintor.convertirXACoordenadasMundo(caramelo.getX(), mundo, ventana);
-        int y = Pintor.convertirYACoordenadasMundo (caramelo.getY(), mundo, ventana);
-        int ancho = Pintor.convertirXACoordenadasVentana(caramelo.getAncho(), mundo, ventana);
-        int alto = Pintor.convertirYACoordenadasVentana(caramelo.getAlto(), mundo, ventana);
         Iterator<Caramelo> caramelos = juego.iterator();
         while( caramelos.hasNext() )
         {
             Caramelo caramelo = caramelos.next();
             Pintor.dibujar(caramelo, context, mundo, ventana);
-            if((x<=ancho)&(y<=alto))
-            {
-                
-            }
-            
+                        
         }
-        
-       
-        
-    }
     
-     static private void dibujar(Caramelo caramelo, GraphicsContext context, Dimension mundo, Dimension ventana)
+    }  
+    
+     
+   
+      
+    static private void dibujar(Caramelo caramelo, GraphicsContext context, Dimension mundo, Dimension ventana)
     {
         int x = Pintor.convertirXACoordenadasVentana(caramelo.getX(), mundo, ventana);
         int y = Pintor.convertirYACoordenadasVentana(caramelo.getY(), mundo, ventana);
         int ancho = Pintor.convertirXACoordenadasVentana(caramelo.getAncho(), mundo, ventana);
         int alto = Pintor.convertirYACoordenadasVentana(caramelo.getAlto(), mundo, ventana);
         context.drawImage(CargadorImagenes.getImage(caramelo.getCaramelo().getFilename()), x, y, ancho, alto);
+        
         
     }
     

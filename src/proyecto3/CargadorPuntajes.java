@@ -22,26 +22,26 @@ import java.util.Scanner;
  */
 public class CargadorPuntajes {
 
-    public static Sistema cargarArchivo(){
-        try
-        {
-            int cantidad;
-            Sistema sistema = new Sistema();
-            try (Scanner scanner = new Scanner(new File("\\temp\\save.proyecto"))) {
-                cantidad = Integer.parseInt(scanner.nextLine());
-                for (int i = 0; i < cantidad; i++){
-                    String nick = scanner.nextLine();
-                    int puntaje = Integer.parseInt(scanner.nextLine());
-                }
-            }
-            return sistema;
-        }
-        catch(FileNotFoundException e)
-        {
-            System.out.println("No se ha podido leer el archivo, prueba revisando si existe el archivo");
-            return new Sistema();
-        }
-    }
+//    public static CandyPirates cargarArchivo(){
+//        try
+//        {
+//            int cantidad;
+//            CandyPirates sistema = new CandyPirates();
+//            try (Scanner scanner = new Scanner(new File("\\temp\\save.proyecto"))) {
+//                cantidad = Integer.parseInt(scanner.nextLine());
+//                for (int i = 0; i < cantidad; i++){
+//                    String nick = scanner.nextLine();
+//                    int puntaje = Integer.parseInt(scanner.nextLine());
+//                }
+//            }
+//            return sistema;
+//        }
+//        catch(FileNotFoundException e)
+//        {
+//            System.out.println("No se ha podido leer el archivo, prueba revisando si existe el archivo");
+//            return new CandyPirates();
+//        }
+//    }
 }
 
 
