@@ -22,15 +22,17 @@ import java.util.Scanner;
  */
 public class CargadorPuntajes {
 
-    public static Sistema cargarArchivo(){
+
+
+    public static CandyPirates cargarArchivo(){
         try
         {
             int cantidad;
-            Sistema sistema = new Sistema();
+            CandyPirates sistema = new CandyPirates();
             try (Scanner scanner = new Scanner(new File("\\temp\\save.proyecto"))) {
                 cantidad = Integer.parseInt(scanner.nextLine());
                 for (int i = 0; i < cantidad; i++){
-                    String nickname = scanner.nextLine();
+                    String nick = scanner.nextLine();
                     int puntaje = Integer.parseInt(scanner.nextLine());
                 }
             }
@@ -39,9 +41,10 @@ public class CargadorPuntajes {
         catch(FileNotFoundException e)
         {
             System.out.println("No se ha podido leer el archivo, prueba revisando si existe el archivo");
-            return new Sistema();
+            return new CandyPirates();
         }
     }
+
 }
 
 

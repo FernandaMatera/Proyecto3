@@ -41,7 +41,7 @@ class VentanaOpciones extends Stage implements EventHandler, ChangeListener
         
         panelPrincipal.setLeft(atras);
         
-        
+                
         Scene scene = new Scene(root, 800, 600);
         super.setScene(scene);
     

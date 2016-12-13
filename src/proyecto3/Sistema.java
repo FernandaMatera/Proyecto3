@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -23,37 +24,35 @@ public class Sistema {
     Sistema() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
     public boolean agregarUsario (Usuario usuario){
-        
+
         return usuarios.add(usuario);
-        
+
     }
-    
+
     public int cantidadUsuarios()
     {
         return this.usuarios.size();
     }
-    
-    
+
+
      public String listarDescendente ()
     {
        String listado = "";
         ArrayList<Usuario> user = new ArrayList<>();
         for (Usuario existente : this.usuarios)
         {
-            user.add(existente);              
+            user.add(existente);
         }
-        
+
         Collections.sort(user, Collections.reverseOrder());
-        
-        
+
+
         for (int i = user.size()-1; i > 0; i--){
             listado+= user.get(i).toString() + "\n";
         }
         return listado;
-        
+
     }
-    
-    
-}
+
