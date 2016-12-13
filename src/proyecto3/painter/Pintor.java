@@ -8,20 +8,29 @@ package proyecto3.painter;
 import proyecto3.Sistema;
 import java.util.Iterator;
 import javafx.scene.canvas.GraphicsContext;
-
 import proyecto3.Caramelo;
 import proyecto3.Dimension;
 
 public class Pintor 
 {
-    static public void pintar( Sistema juego, GraphicsContext context, Dimension mundo, Dimension ventana )
+    static public void pintar( Sistema juego, GraphicsContext context, Dimension mundo, Dimension ventana, Caramelo caramelo )
     {
+        int x = Pintor.convertirXACoordenadasMundo(caramelo.getX(), mundo, ventana);
+        int y = Pintor.convertirYACoordenadasMundo (caramelo.getY(), mundo, ventana);
+        int ancho = Pintor.convertirXACoordenadasVentana(caramelo.getAncho(), mundo, ventana);
+        int alto = Pintor.convertirYACoordenadasVentana(caramelo.getAlto(), mundo, ventana);
         Iterator<Caramelo> caramelos = juego.iterator();
         while( caramelos.hasNext() )
         {
             Caramelo caramelo = caramelos.next();
             Pintor.dibujar(caramelo, context, mundo, ventana);
+            if((x<=ancho)&(y<=alto))
+            {
+                
+            }
+            
         }
+        
        
         
     }
@@ -33,6 +42,7 @@ public class Pintor
         int ancho = Pintor.convertirXACoordenadasVentana(caramelo.getAncho(), mundo, ventana);
         int alto = Pintor.convertirYACoordenadasVentana(caramelo.getAlto(), mundo, ventana);
         context.drawImage(CargadorImagenes.getImage(caramelo.getCaramelo().getFilename()), x, y, ancho, alto);
+        
     }
     
     static private int convertirXACoordenadasMundo(int XCaramelo, Dimension mundo, Dimension ventana)

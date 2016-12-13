@@ -13,18 +13,23 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import proyecto3.painter.CargadorImagenes;
+import java.awt.*;
+import javax.swing.*;
+ 
 
 
 class VentanaUsuario extends Stage implements EventHandler, ChangeListener
 {
     private Button atras;
     private Button jugar;
+    JPanel jpanel;
+    JLabel jlabel = new JLabel();
+    JTextField jtextfield = new JTextField();    
       
     public VentanaUsuario()
     {
@@ -49,7 +54,18 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
         
         Scene scene = new Scene(root, 800, 600);
         super.setScene(scene);
-    
+        
+       jpanel.setLayout(null);
+       jpanel.setBackground(Color.lightGray);
+     
+       
+       jlabel.setBounds(new Rectangle(5, 15, 220, 21));
+       jlabel.setText("Nombre: ");
+       jtextfield.setBounds(new Rectangle(225, 15, 80, 21));
+       
+       jpanel.add(jlabel, null);
+       jpanel.add(jtextfield, null);
+
     }
 
     @Override

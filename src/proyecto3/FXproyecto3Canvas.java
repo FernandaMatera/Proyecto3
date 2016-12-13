@@ -39,8 +39,7 @@ public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeLis
         //agrego eventos de cambios del tamano 
         this.widthProperty().addListener(this);
         this.heightProperty().addListener(this);
-        
-        
+                
         Timeline timer = new Timeline( new KeyFrame(Duration.millis(5), this));
         timer.setCycleCount(Animation.INDEFINITE);
         timer.play();
@@ -60,28 +59,27 @@ public class FXproyecto3Canvas extends Canvas implements EventHandler, ChangeLis
         this.context.clearRect(0, 0, (int)this.getWidth(), (int)this.getHeight());
     
         this.context.drawImage(CargadorImagenes.getImage("wallpaper.png"), 0, 0, this.getWidth(), this.getHeight());
-        
-        
-        
+                
         if(this.sistema != null)
         {
-            Pintor.pintar(this.sistema, this.context, sistema.getMundo(), 
-            new Dimension((int)this.getWidth(),
-            (int)this.getHeight()));
+            Pintor.pintar(this.sistema, this.context, sistema.getMundo(),new Dimension((int)this.getWidth(),(int)this.getHeight(), Caramelo caramelo));
         }
     }
     
     private void mover()
     {
         this.sistema.mover();
+        
     }
 
     @Override
     public void handle(Event event) {
+        if (event.getEventType()== MouseEvent.MOUSE_PRESSED){
+            MouseEvent elGranEvento = (MouseEvent)event;
+            int xCaramelo = (int) elGranEvento.getX();
+            int yCaramelo = (int) elGranEvento.getY();
+        }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-  
-
-    
+       
 }
