@@ -13,7 +13,7 @@ import proyecto3.Dimension;
 
 public class Pintor 
 {
-    static public void pintar( Sistema juego, GraphicsContext context, Dimension mundo, Dimension ventana, Caramelo caramelo )
+    static public void pintar( Sistema juego, GraphicsContext context, Dimension mundo, Dimension ventana )
     {
         int x = Pintor.convertirXACoordenadasMundo(caramelo.getX(), mundo, ventana);
         int y = Pintor.convertirYACoordenadasMundo (caramelo.getY(), mundo, ventana);
@@ -71,6 +71,7 @@ public class Pintor
         double diagonalVentana = Math.sqrt( ventana.getWidth()*ventana.getWidth() + ventana.getHeight()*ventana.getHeight() );
         return (int)(magnitud*diagonalVentana/diagonalMundo);
     }
+
     
 }
 
