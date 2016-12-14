@@ -16,17 +16,19 @@ class VentanaJuego extends Stage
     {
         BorderPane mainPane = new BorderPane();
 
-        /*mainPane.setCenter();
+        FXproyecto3Canvas paint = new FXproyecto3Canvas();
+        mainPane.setCenter(paint);
 
         //Para que el Canvas tome el tamano del panel contenedor
         paint.widthProperty().bind(mainPane.widthProperty());
-        paint.heightProperty().bind(mainPane.heightProperty());*/
+        paint.heightProperty().bind(mainPane.heightProperty());
 
         Scene scene = new Scene(mainPane, 800, 600);
         super.setScene(scene);
         super.setTitle("Candy Pirates");
         //super.setResizable(false);
         //super.setFullScreen(true);
-    }
 
+
+    }
 }

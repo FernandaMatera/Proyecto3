@@ -28,4 +28,5 @@ public class CargadorImagenes
         CargadorImagenes.IMAGENES.put(filename, image);
         return image;
     }
+    
  }
