@@ -17,13 +17,6 @@ import proyecto3.Dimension;
 public class Pintor
 {
     static public void pintar( CandyPirates juego, GraphicsContext context, Dimension mundo, Dimension ventana )
-
-
-
-
-
-    static public void pintar( CandyPirates juego, GraphicsContext context, Dimension mundo, Dimension ventana )
-
     {
         Iterator<Caramelo> caramelos = juego.iterator();
         while( caramelos.hasNext() )
@@ -32,7 +25,6 @@ public class Pintor
             Pintor.dibujar(caramelo, context, mundo, ventana);
 
         }
-
     }
 
 
