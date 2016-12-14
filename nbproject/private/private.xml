@@ -3,9 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Proyecto3/src/proyecto3/FXproyecto3Canvas.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Proyecto3/src/proyecto3/VentanaJuego.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Proyecto3/src/proyecto3/Sistema.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Caramelo.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Sistema.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Dimension.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/GuardarRecord.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/VentanaOpciones.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/TipoCaramelos.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Lector.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/FXproyecto3Canvas.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Loader.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Usuario.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/VentanaUsuario.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/painter/CargadorImagenes.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/VentanaJuego.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/VentanaRanking.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/VentanaDesarrolladores.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/PosicionImagen.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/CandyPirates.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/painter/Pintor.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/VentanaPrincipal.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/Main.java</file>
+            <file>file:/C:/Users/Fernanda%20Matera/Documents/GitHub/Proyecto3/src/proyecto3/CargadorPuntajes.java</file>
         </group>
     </open-files>
 </project-private>

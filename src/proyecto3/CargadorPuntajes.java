@@ -24,11 +24,11 @@ public class CargadorPuntajes {
 
 
 
-    public static CandyPirates cargarArchivo(){
+    public static Sistema cargarArchivo(){
         try
         {
             int cantidad;
-            CandyPirates sistema = new CandyPirates();
+            Sistema sistema = new Sistema();
             try (Scanner scanner = new Scanner(new File("\\temp\\save.proyecto"))) {
                 cantidad = Integer.parseInt(scanner.nextLine());
                 for (int i = 0; i < cantidad; i++){
@@ -41,7 +41,7 @@ public class CargadorPuntajes {
         catch(FileNotFoundException e)
         {
             System.out.println("No se ha podido leer el archivo, prueba revisando si existe el archivo");
-            return new CandyPirates();
+            return new Sistema();
         }
     }
 
