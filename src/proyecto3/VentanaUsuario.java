@@ -6,19 +6,18 @@
  */
 package proyecto3;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import proyecto3.painter.CargadorImagenes;
-
  
 
 
@@ -26,7 +25,13 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
 {
     private Button atras;
     private Button jugar;
-         
+    
+    private TextField usernameTextField;
+    
+    private Label usernameText;
+    
+    private VentanaPrincipal principalStage;
+    
     public VentanaUsuario()
     {
         super.setTitle("Usuario");
@@ -37,7 +42,11 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
         
         BorderPane panelPrincipal = new BorderPane();
         root.getChildren().add(panelPrincipal);
-    
+        
+        panelPrincipal.setLeft(insertTexts());
+        panelPrincipal.setCenter(insertTextFields());
+        panelPrincipal.setBottom(insertButtons());
+                    
         this.jugar = new Button("JUGAR");
         this.jugar.setPrefWidth(100);
         this.jugar.setOnAction(this);
@@ -49,12 +58,71 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
         panelPrincipal.setRight(jugar); 
         
         Scene scene = new Scene(root, 800, 600);
+        scene.getStylesheets().add("style.css");
         super.setScene(scene);
         
     }
+   
+   
+    public VentanaUsuario (VentanaPrincipal stage){
+        this.principalStage = stage;
+        super.setTitle("Usuario");
+        StackPane root = new StackPane();
+        BorderPane panelPrincipal = new BorderPane();
+        root.getChildren().add(panelPrincipal);
+        
+      
+        panelPrincipal.setLeft(insertTexts());
+        panelPrincipal.setCenter(insertTextFields());
+        panelPrincipal.setBottom(insertButtons());
+        
+        Scene scene = new Scene(root, 800, 600);
+        scene.getStylesheets().add("style.css");
+        super.setScene(scene);
+        
+        this.atras.setOnAction(this);
+        this.jugar.setOnAction(this);
+    }
 
-    @Override
-    public void handle(Event event)
+    private BorderPane insertButtons(){
+        HBox botones = new HBox();        
+        this.atras = new Button("ATRAS");
+        this.atras.setPrefWidth(100);
+        this.jugar = new Button("JUGAR");
+        this.jugar.setPrefWidth(100);
+        
+        botones.getChildren().addAll(this.atras, this.jugar);
+        botones.getStyleClass().add("buttonsPane");
+        
+        BorderPane buttonsPane = new BorderPane();
+        buttonsPane.setRight(botones);
+        return buttonsPane;
+    }
+     private VBox insertTexts(){
+        VBox textos = new VBox();
+        this.usernameText = new Label("Nombre de Usuario");
+              
+        textos.getChildren().addAll(this.usernameText);
+        textos.getStyleClass().add("textBar");
+        
+        return textos;
+    }
+       private VBox insertTextFields(){
+        VBox textFields = new VBox();
+        this.usernameTextField = new TextField();
+               
+        textFields.getChildren().addAll(this.usernameTextField);
+        textFields.getStyleClass().add("textFieldsBar");
+        
+        return textFields;
+    }
+       
+     public void agregarUsuario(){
+        String username = this.usernameTextField.getText();
+        Usuario user = new Usuario(username);
+        /*this.principalStage.agregarUsuario(user);*/
+    }
+     public void handle(Event event)
     {
         if( event.getSource() == this.atras )
         {
@@ -67,9 +135,7 @@ class VentanaUsuario extends Stage implements EventHandler, ChangeListener
             this.close();
         }
     }
-
-    @Override
-    public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
 }
+

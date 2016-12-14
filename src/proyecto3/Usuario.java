@@ -19,6 +19,10 @@ public class Usuario {
         this.puntaje = puntaje;
     }
 
+    Usuario(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNickname() {
         return nickname;
     }

@@ -28,15 +28,13 @@ public class Sistema {
     public boolean agregarUsario (Usuario usuario){
 
         return usuarios.add(usuario);
-
     }
 
     public int cantidadUsuarios()
     {
         return this.usuarios.size();
     }
-
-
+    
      public String listarDescendente ()
     {
        String listado = "";
@@ -45,10 +43,7 @@ public class Sistema {
         {
             user.add(existente);
         }
-
         Collections.sort(user, Collections.reverseOrder());
-
-
         for (int i = user.size()-1; i > 0; i--){
             listado+= user.get(i).toString() + "\n";
         }
