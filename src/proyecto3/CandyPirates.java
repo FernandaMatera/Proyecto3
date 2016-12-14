@@ -75,9 +75,6 @@ public class CandyPirates
         return caramelos.iterator();
     }
 
-
-
-
     private boolean estaDentro(MouseEvent e,int XCaramelo, int YCaramelo, int ancho, int alto)
     {
         if ((e.getX() > XCaramelo) &&(e.getX() < (XCaramelo + ancho)) &&(e.getY() > YCaramelo) &&(e.getY() < (YCaramelo + alto)))

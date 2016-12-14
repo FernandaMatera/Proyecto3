@@ -80,15 +80,14 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
         panelTabla.setCenter(table);
         panelTabla.setPadding(new Insets(0, 0, 10, 0));
         panelCentral.setCenter(panelTabla);
-        
+       
         panelPrincipal.setCenter(panelCentral);
-        
-        
+               
         table.setItems(data);
         firstNameCol = new TableColumn("Nombre");
         firstNameCol.setMinWidth(100);
         firstNameCol.setCellValueFactory(new PropertyValueFactory<>("Puntaje"));
-         
+     
         panelTabla = new BorderPane();
         panelTabla.setCenter(table);
         panelTabla.setPadding(new Insets(0, 0, 10, 0));
@@ -98,8 +97,7 @@ class VentanaRanking extends Stage implements EventHandler, ChangeListener
         
         Scene scene = new Scene(root, 800, 600);
         super.setScene(scene);
-        
-        
+            
     }
 
     @Override
